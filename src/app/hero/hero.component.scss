@@ -1,0 +1,25 @@
+@import '../../variables.scss';
+
+section {
+    border: solid 1px white;
+    width: 650px;
+    height: 278px;
+    color: white;
+    font-family: $font-hero;
+    font-size: 72px;
+    font-weight: lighter;
+    position: absolute;
+    top: 226px;
+    left: 165px;
+    padding: 40px;
+
+    @include respond-to(phone) {
+        width: 327px;
+        height: 196px;
+        font-size: 40px;
+        top: 226px;
+        left: 20px;
+        padding: 26px 24px 23px 24px;
+        line-height: 38px;
+    }
+}

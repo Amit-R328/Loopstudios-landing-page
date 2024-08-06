@@ -1,0 +1,154 @@
+@import "../../variables.scss";
+
+:host {
+  display: flex;
+  justify-content: center;
+  .creations {
+    display: flex;
+    flex-direction: column;
+    width: 1111px;
+    gap: 80px;
+
+    @include respond-to(phone) {
+      width: 327px;
+      gap: 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .mobile-btn {
+      display: none;
+
+      @include respond-to(phone) {
+        display: block;
+        font-family: "Alata";
+        width: 157px;
+        letter-spacing: 5px;
+        line-height: 14px;
+        height: 40px;
+        font-size: 0.875rem;
+        background-color: transparent;
+        cursor: pointer;
+        border: 1px solid dimgray;
+      }
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+
+      @include respond-to(phone) {
+        flex-direction: column;
+      }
+
+      h2 {
+        font-family: $font-hero;
+        font-weight: 300;
+        font-size: 3rem;
+        line-height: 48px;
+
+        @include respond-to(phone) {
+          font-size: 2rem;
+          line-height: 32px;
+        }
+      }
+
+      button {
+        font-family: $font;
+        width: 157px;
+        letter-spacing: 5px;
+        line-height: 14px;
+        height: 40px;
+        font-size: 0.875rem;
+        background-color: transparent;
+        cursor: pointer;
+        border: 1px solid $Very-Dark-Gray;
+
+        &:hover {
+          background-color: $Black;
+          color: $White;
+        }
+
+        @include respond-to(phone) {
+          display: none;
+        }
+      }
+    }
+
+    .creations-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 256px);
+      grid-template-rows: repeat(2, 450px);
+      gap: 30px;
+
+      @include respond-to(phone) {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        width: 327px;
+      }
+
+      figure {
+        display: grid;
+        grid-template-columns: 40px auto;
+        grid-template-rows: 354px auto;
+
+        @include respond-to(phone) {
+          display: grid;
+          grid-template-columns: 20px auto;
+          grid-template-rows: 52px auto;
+        }
+
+        img {
+          grid-row: 1/ -1;
+          grid-column: 1/ -1;
+          width: 256px;
+          object-fit: cover;
+
+          @include respond-to(phone) {
+            width: 100%;
+          }
+        }
+
+        figcaption {
+          font-family: $font-hero;
+          font-size: 2rem;
+          font-weight: 300;
+          line-height: 32px;
+          letter-spacing: 0px;
+          color: $White;
+          grid-row: 2;
+          grid-column: 2;
+
+          @include respond-to(phone) {
+            font-size: 1.5rem;
+            line-height: 24px;
+          }
+        }
+
+        .overlay {
+          grid-row: 1/ -1;
+          grid-column: 1/ -1;
+          background-color: #c2bcbc91;
+          opacity: 0;
+          transition: opacity 0.3s ease-in-out;
+          color: $Black;
+          font-size: 24px;
+          text-align: center;
+        }
+
+        &:hover .overlay{
+            opacity: 1;
+            cursor: pointer;
+        }
+
+        &:hover figcaption {
+          color: $Black;
+          z-index: 5;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

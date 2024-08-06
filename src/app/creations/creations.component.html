@@ -1,0 +1,14 @@
+<section class="creations">
+    <section class="header">
+        <h2>OUR CREATIONS</h2>
+        <button>SEE ALL</button>
+    </section>
+    <section class="creations-grid">
+        <figure *ngFor="let creation of creations">
+            <img [src]="getImgSrc(creation)" [alt]="creation.altText"/>
+            <figcaption [innerHTML]="creation.caption"></figcaption>
+            <div class="overlay"></div>
+        </figure>
+    </section>
+    <button class="mobile-btn">SEE ALL</button>
+</section>

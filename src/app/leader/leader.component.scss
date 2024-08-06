@@ -1,0 +1,75 @@
+@import '../../variables.scss';
+
+:host {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+    
+    .leader-vr {
+        margin: 160px 0px;
+        width: 1111px;
+        height: 500px;
+        display: grid;
+        grid-template-columns: 570px auto;
+        grid-template-rows: 183px auto;
+
+        @include respond-to(phone) {
+            display: flex;
+            flex-direction: column;
+            margin: 96px 0px;
+            width: 327px;
+            height: 527px;
+        }
+
+        figure {
+            img {
+                @include respond-to(phone) {
+                    width: 100%;
+                }
+            }
+        }
+        
+        article {
+            width: 541px;
+            height: 317px;
+            background-color: white;
+            padding: 96px 0px 0px 96px;
+            grid-row: 2;
+            grid-column: 2;
+
+            @include respond-to(phone) {
+                width: 279px;
+                height: 255px;
+                padding: unset;
+                margin: 48px 24px 0px 24px;
+            }
+            
+            h2 {
+                font-family: $font-hero;
+                font-weight: 300;
+                font-size: 3rem;
+                line-height: 48px;
+
+                @include respond-to(phone) {
+                    font-size: 2rem;
+                    line-height: 32px;
+                }
+            }
+
+            p {
+                font-size: 0.938rem;
+                font-family: $font;
+                margin-top: 25px;
+                color: $Dark-Gray;
+                line-height: 25px;
+
+                @include respond-to(phone) {
+                    margin-top: 16px;
+                    text-align: center;
+                    letter-spacing: 0px;
+                }
+            }
+        }
+    }
+}

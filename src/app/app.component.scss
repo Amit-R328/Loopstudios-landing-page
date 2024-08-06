@@ -1,0 +1,15 @@
+@import '../variables.scss';
+
+header {
+    background-image: url('https://res.cloudinary.com/dcbbqlssh/image/upload/v1719736241/loopstudios/desktop/image-hero_hagdpj.jpg');
+    height: 650px;
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+
+    @include respond-to(phone) {
+        background-image: url('https://res.cloudinary.com/dcbbqlssh/image/upload/v1719736243/loopstudios/mobile/image-hero_gcg5iz.jpg');
+        height: 650px;
+        width: 375;
+    }
+}

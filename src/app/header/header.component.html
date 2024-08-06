@@ -1,0 +1,24 @@
+<header>
+    <img src="https://res.cloudinary.com/dcbbqlssh/image/upload/v1719736240/loopstudios/logo_ppyyan.svg" alt="Loopstudios logo" class="logo">
+    <nav>
+        <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Support</a></li>
+        </ul>
+    </nav>
+    <button class="hamburger" aria-label="Open mobile navigation" (click)="toggleMenu()">
+        <img src="https://res.cloudinary.com/dcbbqlssh/image/upload/v1719736245/loopstudios/icon-hamburger_n7qywp.svg" alt="Hamburger icon">
+    </button>
+    <aside [class.active]="menuActive">
+        <div class="top">
+            <img src="https://res.cloudinary.com/dcbbqlssh/image/upload/v1719736240/loopstudios/logo_ppyyan.svg" alt="Loopstudios logo" class="logo">
+            <button class="close" aria-label="Close mobile navigation" (click)="toggleMenu()">
+                <img src="https://res.cloudinary.com/dcbbqlssh/image/upload/v1719736244/loopstudios/icon-close_vksgm6.svg" alt="Close icon">
+            </button>
+        </div>
+        <app-nav-mobile></app-nav-mobile>
+    </aside>
+</header>
