@@ -54,6 +54,7 @@
                 @include respond-to(phone) {
                     font-size: 2rem;
                     line-height: 32px;
+                    text-align: center;
                 }
             }
 

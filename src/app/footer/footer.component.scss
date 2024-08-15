@@ -5,69 +5,106 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 160px;
   margin-top: 183px;
   font-family: $font;
 
+  @include respond-to(phone) {
+    margin-top: 96px;
+  }
+
   .footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
     width: 1111px;
-    display: flex;
-    flex-direction: column;
-    margin-top: 44px;
+    margin: 44px auto;
     gap: 24px;
 
-    .first-line {
-      display: flex;
-      justify-content: space-between;
+    @include respond-to(phone) {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto auto auto;
+      text-align: center;
+      justify-items: center;
+      margin: 56px;
+      gap: unset;
+    }
 
-      .logo {
-        width: 144px;
-        height: 24px;
+    .logo {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+      width: 144px;
+      height: 24px;
 
-        img {
-          width: 100%;
-        }
+      img {
+        width: 100%;
       }
 
-      .social-media {
-        display: flex;
-        gap: 16px;
-
-        a {
-          height: 24px;
-          width: 24px;
-
-          img {
-            cursor: pointer;
-          }
-          @include hover-underline-effect;
-        }
+      @include respond-to(phone) {
+        margin-bottom: 32px;
       }
     }
 
-    .second-line {
+    .social-media {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+      justify-self: end;
       display: flex;
-      justify-content: space-between;
-      line-height: 25px;
+      gap: 16px;
 
-      .footer-links {
-        display: flex;
-        gap: 32px;
+      a {
+        height: 24px;
+        width: 24px;
 
-        a {
-          text-decoration: none;
-          font-size: 0.938rem;
-          color: $White;
+        img {
           cursor: pointer;
-          @include hover-underline-effect;
         }
+        @include hover-underline-effect;
       }
 
-      .footer-legal {
-        color: $Dark-Gray;
-        small {
-          font-size: 0.938rem;
-        }
+      @include respond-to(phone) {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+        justify-self: center;
+        margin-top: 24px;
+      }
+    }
+
+    .footer-links {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+      display: flex;
+      gap: 32px;
+
+      a {
+        text-decoration: none;
+        font-size: 0.938rem;
+        color: $White;
+        cursor: pointer;
+        @include hover-underline-effect;
+      }
+
+      @include respond-to(phone) {
+        gap: 9px;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    .footer-legal {
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+      justify-self: end;
+      color: $Dark-Gray;
+
+      small {
+        font-size: 0.938rem;
+      }
+
+      @include respond-to(phone) {
+        grid-column: 1 / 2;
+        grid-row: -1;
+        justify-self: center;
+        margin-top: 20px;
       }
     }
   }
