@@ -6,10 +6,12 @@ header {
     display: flex;
     flex-direction: column;
     background-size: cover;
+    align-items: center;
 
     @include respond-to(phone) {
         background-image: url('https://res.cloudinary.com/dcbbqlssh/image/upload/v1719736243/loopstudios/mobile/image-hero_gcg5iz.jpg');
         height: 650px;
         width: 375;
+        align-items: unset;
     }
 }

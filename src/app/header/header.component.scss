@@ -1,57 +1,64 @@
 @import "../../variables.scss";
 
-header {
-  display: flex;
-  margin: 65px 165px;
-  justify-content: space-between;
+:host {
+  width: 1111px;
 
   @include respond-to(phone) {
-    margin: 40px 24px;
+    width: 327px;
   }
 
-  img {
-    height: 32px;
-    width: 192px;
-  }
-  nav {
+  header {
+    display: flex;
+    margin: 65px 0px;
+    justify-content: space-between;
+    
     @include respond-to(phone) {
-      display: none;
+      margin: 40px 24px;
     }
-
-    ul {
-      display: flex;
-      list-style: none;
-      font-family: $font;
-      li {
-        margin-left: 40px;
-        font-size: 15px;
-        a {
-          color: white;
-          cursor: pointer;
-          text-decoration: none;
-
-          @include hover-underline-effect;
-        }
+    
+    img {
+      height: 32px;
+      width: 192px;
+    }
+    nav {
+      @include respond-to(phone) {
+        display: none;
       }
+      
+      ul {
+        display: flex;
+        list-style: none;
+        font-family: $font;
+        li {
+          margin-left: 40px;
+          font-size: 15px;
+          a {
+            color: white;
+            cursor: pointer;
+            text-decoration: none;
+            
+            @include hover-underline-effect;
+          }
+        }
     }
   }
-
+  
   button {
     background-color: transparent;
     border: none;
     cursor: pointer;
     display: none;
-
+    
     @include respond-to(phone) {
       display: block;
     }
-
+    
     img {
       height: 20px;
       width: 20px;
     }
   }
-
+  
   aside {
     display: none;
     visibility: hidden;
@@ -69,7 +76,7 @@ header {
       z-index: 1000;
       overflow: hidden; 
     }
-
+    
     .top {
       margin: 40px 26px 157px 24px;
       display: flex;
@@ -77,4 +84,5 @@ header {
       justify-content: space-between;
     }
   }
+}
 }
