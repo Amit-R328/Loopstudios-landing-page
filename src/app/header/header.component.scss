@@ -4,7 +4,7 @@
   width: 1111px;
 
   @include respond-to(phone) {
-    width: 327px;
+    width: 100%;
   }
 
   header {
